@@ -1,0 +1,49 @@
+World Flag/Country Quiz
+
+instructor approval: Joey
+
+email: nathan.gappy@gmail.com
+
+project: project #3 solo jquery
+
+name: nathan gappy
+
+description: a quiz that tests users knowledge of world country flags
+
+mvp goals: 
+  - users are shown a randomly generated world flag
+  - users are prompted for their guess of the country name associated with that flag
+  - users score is tracked based on their correct/incorrect answers for 10 randomly generated flags
+  - having quiz look good on all devices from desktop down
+
+stretch goals:
+  - adding a countdown timer so that gameplay is timed, with all the flags; to see how many you can get in a row; with max 3 wrong.
+  - adding ability for user to select how many randomly generated flags are in quiz
+  - altername gameplay mode where user is shown the name of a country, and multiple possible flags to choose/click from
+  - add awesome animations for flags appearing/disappearing; game beginning/ending
+
+researched data:
+  - finding usable world flags for every country
+
+pseudocode 
+  - place empty container in center of screen with room for an image/input/submit element within input
+  - create gameplay object to build game functions off
+  - have a gameplay function that repeats this game process a certain numbeer of times - 10 times
+  - generate a random number
+  - use random number to select a random country object from array of countries
+  - function to make sure that flag is only picked once
+  - use random country object and its associated img for placement on screen
+  - prompt user for input/guess on the country name of the flag
+  - check if user input matches the country name from the randomly selected country name
+  - update user score that is created on a globally scoped game object
+  - once the gameplay function has randomly generated img/asked for input/checked answer/updated score enough times the game ends
+  - users are presented their score
+
+issues to figure out
+1. answer comparison
+  - user input vs correct country name; what will be accepted as correct?
+  - varying answers may ruin gameplay because of rigidity of the comparison
+  - make sure that all answers are lowercased for better matching
+  - possibly answer a contains check and if answer contains part of answer give it to em
+
+

@@ -1,0 +1,26 @@
+// universal base styling
+html {
+  font-size: 62.5%;
+}
+
+// universal body styles
+body {
+  font-size: 3rem;
+}
+
+// wrapper to contain content
+.wrapper {
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+// universal list styles
+ul {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}

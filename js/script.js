@@ -36,14 +36,14 @@ app.playGame = function(){
   }
 }
 
-// make comparison and updates score
+// checks answer and updates score after check
 app.checkAnswer = function(){
   if(app.currentRandomCountry === app.userAnswer){
     app.userScore.correct += 1;
-    console.log('thats fucking right!')
+    app.updateScore(this.userScore);
   } else {
     app.userScore.incorrect += 1;
-    console.log('thats fucking wrong!')
+    app.updateScore(this.userScore);
   }
 }
 
@@ -56,15 +56,23 @@ app.getRandomNumber = function(){
 // get and display random flag image
 app.getRandomCountry = function(){
   let randomNumber = app.getRandomNumber();
-  let randomCountry = countries[randomNumber];
+  let randomCountry = countries[randomNumber]
+  // check that country has not been used yet
+  console.log(this.countriesUsed.indexOf(randomCountry));
+  console.log(this.countriesUsed.length);
+  if(this.countriesUsed.indexOf(randomCountry) >= 0 && this.countriesUsed.length > 0){
+    app.getRandomCountry();
+  }
+  // use random country that has passed a used already validation
   $('.display-flag > img').attr('src', randomCountry.flag);
   app.currentRandomCountry = randomCountry.country;
   app.countriesUsed.push(randomCountry.country);
 }
 
-// handle user input
+// handle user input from input box
 app.getUserAnswer = function(){
-  let userAnswer = $('.game-controls input').val();
+  let userAnswer = $('.game-controls input').val().toLowerCase();
+  console.log(userAnswer);
   app.userAnswer = userAnswer;
   $('.game-controls input').val('');
 }
@@ -76,3 +84,11 @@ $('form').on('submit', function(e){
   app.checkAnswer();
   app.playGame()
 });
+
+// update score on screen 
+app.updateScore = function(score){
+  $('.display-scoreboard .score').text(
+    `Score: ${score.correct} / ${score.correct + score.incorrect}`
+  );
+}
+

@@ -154,7 +154,7 @@ let countries = [
   },
   {
     country: 'costa rica',
-    flag: './img/costaRica'
+    flag: './img/costaRica.png'
   },
   {
     country: 'cote d\'ivoire',

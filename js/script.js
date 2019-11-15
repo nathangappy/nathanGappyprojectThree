@@ -23,16 +23,19 @@ const app = {
   },
   userAnswer: '',
   currentRandomCountry: '',
-  numOfQuestions: 10
+  numOfQuestions: 2,
+  answers: []
 };
+
+// GAME METHODS BELOW
+/////////////////////
 
 // start the game
 app.playGame = function(){
-  console.log(app.countriesUsed, app.userScore);
   if(this.countriesUsed.length < this.numOfQuestions){
     app.getRandomCountry();
   } else {
-    console.log(`you got ${app.userScore.correct} right and ${app.userScore.incorrect} wrong`);
+    app.gameOver();
   }
 }
 
@@ -58,24 +61,87 @@ app.getRandomCountry = function(){
   let randomNumber = app.getRandomNumber();
   let randomCountry = countries[randomNumber]
   // check that country has not been used yet
-  console.log(this.countriesUsed.indexOf(randomCountry));
-  console.log(this.countriesUsed.length);
   if(this.countriesUsed.indexOf(randomCountry) >= 0 && this.countriesUsed.length > 0){
     app.getRandomCountry();
   }
   // use random country that has passed a used already validation
   $('.display-flag > img').attr('src', randomCountry.flag);
   app.currentRandomCountry = randomCountry.country;
+  // push countries to arrays to keep track of questions asked
   app.countriesUsed.push(randomCountry.country);
+  app.answers.push(randomCountry)
 }
 
 // handle user input from input box
 app.getUserAnswer = function(){
   let userAnswer = $('.game-controls input').val().toLowerCase();
-  console.log(userAnswer);
   app.userAnswer = userAnswer;
+  // add user answer to array of questions and answers
+  index = app.answers.findIndex(x => x.country === app.currentRandomCountry);
+  app.answers[index].userAnswer = userAnswer;
   $('.game-controls input').val('');
 }
+
+
+// update score on screen 
+app.updateScore = function(score){
+  $('.display-scoreboard .score').text(
+    `Score: ${score.correct} / ${score.correct + score.incorrect}`
+  );
+}
+  
+// create and display answers/score on game over screen
+app.displayResult = function(answers){
+  // display score 
+  $('.result-display-score').text(
+    `You got ${app.userScore.correct} out of ${app.numOfQuestions} countries correct.`
+  );
+  // display each question with correct answer and user answer
+  answers.forEach(answer => {
+    $('.result-display ul').append(`
+    <li>
+    <div class="result-flag-container">
+    <img src=${answer.flag}>
+    </div>
+    <div class="result-display-answers">
+    <p>Correct: <span>${answer.country}</span></p>
+    <p>Answer: <span>${answer.userAnswer}</span></p>
+    </div>
+    </li>
+  `);
+  });
+}
+
+// reset game object function
+app.resetGame = function(){
+  app.countriesUsed = [];
+  app.userScore = {
+    correct: 0,
+    incorrect: 0
+  };
+  app.userAnswer = '';
+  app.currentRandomCountry = '';
+  app.numOfQuestions = 2;
+  app.answers = []
+  $('.result-display ul').empty();
+}
+
+// play again function
+app.playAgain = function(){
+  $('.result').css('display', 'none');  
+  app.resetGame();
+  app.playGame();
+}
+
+// game over function
+app.gameOver = function(score){
+  $('.result').css('display', 'flex');
+  app.displayResult(app.answers);
+}
+
+
+// EVENT LISTENERS BELOW
+////////////////////////
 
 // event listener for form submission
 $('form').on('submit', function(e){
@@ -85,10 +151,5 @@ $('form').on('submit', function(e){
   app.playGame()
 });
 
-// update score on screen 
-app.updateScore = function(score){
-  $('.display-scoreboard .score').text(
-    `Score: ${score.correct} / ${score.correct + score.incorrect}`
-  );
-}
-
+// event listener for play again button
+$('.play-again').on('click', app.playAgain);

@@ -12,12 +12,17 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 @import 'base/reset';
 @import 'base/typography';
 
-// components import
-@import 'components/controls';
+// main components import
+@import 'components/nav';
 @import 'components/display';
 @import 'components/scoreboard';
-@import 'components/nav';
+@import 'components/controls';
+@import 'components/buttons';
+
+// result components import
+@import 'components/result-display';
 
 // layout import
 @import 'layout/navigation';
 @import 'layout/main.scss';
+@import 'layout/result';

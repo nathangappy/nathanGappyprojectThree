@@ -185,6 +185,10 @@ html {
 
 body {
   font-size: 3rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6))), url("/img/imgs/globe.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.6)), url("/img/imgs/globe.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .wrapper {
@@ -228,6 +232,13 @@ a {
   color: #fff;
 }
 
+.welcome h1 {
+  text-transform: uppercase;
+  font-size: 8rem;
+  color: #fff;
+  width: 50%;
+}
+
 .navigation p {
   font-size: 4rem;
   text-transform: uppercase;
@@ -247,6 +258,26 @@ a {
   position: fixed;
   top: 5px;
   right: 5px;
+}
+
+.welcome-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90vh;
+  width: 100%;
+}
+
+.welcome-start .hero-text {
+  width: 50%;
+}
+
+.welcome-start form {
+  width: 50%;
+  color: #fff;
 }
 
 .result-display {
@@ -302,7 +333,6 @@ a {
 }
 
 .navigation {
-  background: #F26457;
   color: #fff;
   height: 10vh;
 }
@@ -314,6 +344,10 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.welcome {
+  height: 90vh;
 }
 
 .game {

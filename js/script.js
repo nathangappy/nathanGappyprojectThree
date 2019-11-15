@@ -23,7 +23,7 @@ const app = {
   },
   userAnswer: '',
   currentRandomCountry: '',
-  numOfQuestions: 2,
+  numOfQuestions: 10,
   answers: []
 };
 
@@ -121,7 +121,7 @@ app.resetGame = function(){
   };
   app.userAnswer = '';
   app.currentRandomCountry = '';
-  app.numOfQuestions = 2;
+  app.numOfQuestions = 10;
   app.answers = []
   $('.result-display ul').empty();
 }

@@ -1,4 +1,8 @@
 // welcome styles
 .welcome {
   height: 90vh;
+
+  @media (max-width: $mobileSize){
+    height: auto;
+  }
 }

@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  
   /* Landscape phones and down */
   @media (max-width: $mobileSize) {
+    height: auto;
     button {
       font-size: 2rem;
     }

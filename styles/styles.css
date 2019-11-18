@@ -333,6 +333,9 @@ body {
 }
 
 @media (max-width: 700px) {
+  .welcome-start {
+    height: auto;
+  }
   .welcome-start button {
     font-size: 2rem;
   }
@@ -436,6 +439,12 @@ body {
   height: 90vh;
 }
 
+@media (max-width: 700px) {
+  .welcome {
+    height: auto;
+  }
+}
+
 .game {
   height: 90vh;
   padding: 8rem 0;
@@ -443,7 +452,6 @@ body {
 
 @media (max-width: 700px) {
   .game {
-    height: auto;
     padding: 0;
     margin-top: 0;
   }

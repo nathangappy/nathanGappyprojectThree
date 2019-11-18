@@ -4,6 +4,7 @@
   padding: 8rem 0;
 
   @media (max-width: $mobileSize){
+    height: auto;
     padding: 0;
     margin-top: 0;
   }
@@ -33,8 +34,8 @@
       margin-top: 4rem; 
     }
 
-    @media (max-width: 600px){
-      width: 70%;
+    @media (max-width: $mobileSize){
+      width: 60%;
     }
 
   }
@@ -48,7 +49,7 @@
     p {
       font-size: 5rem;
 
-      @media (max-width: 600px){
+      @media (max-width: $mobileSize){
         font-size: 2rem;
       }
     }
@@ -67,6 +68,7 @@
   input {
     width: 80%;
     text-align: center;
+    border: none;
   }
 
   button {

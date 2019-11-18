@@ -443,6 +443,7 @@ body {
 
 @media (max-width: 700px) {
   .game {
+    height: auto;
     padding: 0;
     margin-top: 0;
   }
@@ -483,9 +484,9 @@ body {
   margin-top: 4rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .game-display .display-flag {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -504,7 +505,7 @@ body {
   font-size: 5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .game-display .display-scoreboard p {
     font-size: 2rem;
   }
@@ -523,6 +524,7 @@ body {
 .game-controls input {
   width: 80%;
   text-align: center;
+  border: none;
 }
 
 .game-controls button {

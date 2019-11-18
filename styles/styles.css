@@ -452,6 +452,7 @@ body {
 
 @media (max-width: 700px) {
   .game {
+    height: auto;
     padding: 0;
     margin-top: 0;
   }

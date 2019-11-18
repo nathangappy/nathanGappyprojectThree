@@ -4,6 +4,7 @@
   padding: 8rem 0;
 
   @media (max-width: $mobileSize){
+    height: auto;
     padding: 0;
     margin-top: 0;
   }

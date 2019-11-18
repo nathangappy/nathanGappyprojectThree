@@ -23,7 +23,7 @@ const app = {
   },
   userAnswer: '',
   currentRandomCountry: '',
-  numOfQuestions: 10,
+  numOfQuestions: 100,
   answers: []
 };
 
@@ -61,7 +61,7 @@ app.getRandomCountry = function(){
   let randomNumber = app.getRandomNumber();
   let randomCountry = countries[randomNumber]
   // check that country has not been used yet
-  if(this.countriesUsed.indexOf(randomCountry.country) >= 0 && this.countriesUsed.length > 0){
+  if(app.countriesUsed.indexOf(`${randomCountry.country}`) >= 0 && app.countriesUsed.length > 0){
     app.getRandomCountry();
   } else {
     // use random country that has passed a used already validation
@@ -122,7 +122,7 @@ app.resetGame = function(){
   };
   app.userAnswer = '';
   app.currentRandomCountry = '';
-  app.numOfQuestions = 10;
+  app.numOfQuestions = 100;
   app.answers = []
   $('.result-display ul').empty();
   $('.display-scoreboard .score').text('Score: ');

@@ -1,4 +1,6 @@
 .navigation {
+  color: #fff;
+
   p {
     font-size: 4rem;
     text-transform: uppercase;
@@ -9,6 +11,24 @@
   }
 
   li {
-    padding-left: 2rem;
+    padding: 0 2rem;
+    a:hover {
+      border-bottom: 5px solid $primaryColor;
+    }
+  }
+
+  /* Landscape phones and down */
+  @media (max-width: 600px) {
+    text-align: center;
+
+    p {
+      margin: 2rem 0;
+      font-size: 3rem;
+    }
+
+    ul {
+      padding: 2rem;
+      justify-content: center;
+    }
   }
 }

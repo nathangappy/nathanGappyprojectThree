@@ -1,3 +1,8 @@
+// fonts
+body {
+  font-family: $baseFont;
+}
+
 // navigation typography
 .navigation {
   padding: 2rem 0;
@@ -20,7 +25,15 @@
   h1 {
     text-transform: uppercase;
     font-size: 8rem;
+    font-weight: 400;
     color: #fff;
     width: 50%;
+  }
+
+  /* Landscape phones and down */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 4.5rem;
+    }
   }
 }

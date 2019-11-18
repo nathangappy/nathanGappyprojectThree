@@ -1,15 +1,14 @@
 .welcome-start {
-  display: flex;
-  align-items: center;
   height: 90vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  .hero-text {
-    width: 50%;
-  }
-
-  form {
-    width: 50%;
-    color: #fff;
+  /* Landscape phones and down */
+  @media (max-width: 600px) {
+    button {
+      font-size: 4rem;
+    }
   }
 }

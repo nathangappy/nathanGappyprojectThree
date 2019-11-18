@@ -63,13 +63,14 @@ app.getRandomCountry = function(){
   // check that country has not been used yet
   if(this.countriesUsed.indexOf(randomCountry) >= 0 && this.countriesUsed.length > 0){
     app.getRandomCountry();
+  } else {
+    // use random country that has passed a used already validation
+    $('.display-flag > img').attr('src', randomCountry.flag);
+    app.currentRandomCountry = randomCountry.country;
+    // push countries to arrays to keep track of questions asked
+    app.countriesUsed.push(randomCountry.country);
+    app.answers.push(randomCountry)
   }
-  // use random country that has passed a used already validation
-  $('.display-flag > img').attr('src', randomCountry.flag);
-  app.currentRandomCountry = randomCountry.country;
-  // push countries to arrays to keep track of questions asked
-  app.countriesUsed.push(randomCountry.country);
-  app.answers.push(randomCountry)
 }
 
 // handle user input from input box
@@ -124,6 +125,8 @@ app.resetGame = function(){
   app.numOfQuestions = 10;
   app.answers = []
   $('.result-display ul').empty();
+  $('.display-scoreboard .score').text('Score: ');
+  $('.game-controls input').val('');
 }
 
 // play again function
@@ -139,12 +142,17 @@ app.gameOver = function(score){
   app.displayResult(app.answers);
 }
 
-
+// start game from welcome screen function
+app.startGame = function(){
+  let num = $('.welcome-start input').val();
+  app.numOfQuestions = num;
+  app.playGame();
+}
 // EVENT LISTENERS BELOW
 ////////////////////////
 
 // event listener for form submission
-$('form').on('submit', function(e){
+$('.game-controls form').on('submit', function(e){
   e.preventDefault();
   app.getUserAnswer();
   app.checkAnswer();

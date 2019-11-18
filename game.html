@@ -10,7 +10,7 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-  <title>Country Impossible</title>
+  <title>World Master</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
   <nav class="navigation">
     <div class="wrapper">
       <div class="navigation-container">
-        <p><a>country impossible</a></p>
+        <p>country impossible</p>
         <ul>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./game.html">Game</a></li>
@@ -27,18 +27,39 @@
     </div>
   </nav>
 
-  <!-- Welcome -->
-  <section class="welcome">
+  <!-- Game -->
+  <main class="game">
     <div class="wrapper">
-      <div class="welcome-start">
-        <div class="hero">
-          <h1>can you guess the country</h1>
-          <button><a href='game.html'>Let's Play</a></button>
-        </div>
+      <div class="game-container">
+        <section class="game-display">
+          <div class="display-scoreboard">
+            <!-- <h2>Game Stats</h2> -->
+            <p class='score'>Score: <span></span></p>
+          </div>
+          <div class="display-flag">
+            <img src="" alt="country flag">
+          </div>
+        </section>
+        <section class="game-controls">
+          <form action="">
+            <input type="text">
+            <button>i got this</button>
+          </form>
+        </section>
       </div>
     </div>
-  </section>
+  </main>
 
+  <!-- Result Screen -->
+  <section class="result">
+    <div class="result-display">
+      <h2>game over</h2>
+      <p class='result-display-score'>You got 5 out of 7 countries correct</p>
+      <ul>
+      </ul>
+    </div>
+    <button class="play-again">Play Again</button>
+  </section>
 
   <script src="./data/countries.js"></script>
   <script src="./js/script.js"></script>

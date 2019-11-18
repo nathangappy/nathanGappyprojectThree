@@ -1,11 +1,17 @@
 // navigation style
 .navigation {
-  // background: #F26457;
   color: #fff;
   height: 10vh;
+
 }
 
 .navigation-container {
   display: flex;
   justify-content: space-between;
+
+  /* Landscape phones and down */
+  @media (max-width: 600px) {
+    display: inline-block;
+    text-align: center;
+  }
 }

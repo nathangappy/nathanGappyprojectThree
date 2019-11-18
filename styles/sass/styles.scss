@@ -7,6 +7,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
+// abstracts import
+@import 'abstracts/variables';
+
 // base import
 @import 'base/base';
 @import 'base/reset';
@@ -14,9 +17,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 // main components import
 @import 'components/nav';
-@import 'components/display';
-@import 'components/scoreboard';
-@import 'components/controls';
 @import 'components/buttons';
 @import 'components/welcomeStart';
 

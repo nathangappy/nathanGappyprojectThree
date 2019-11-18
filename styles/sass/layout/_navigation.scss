@@ -3,6 +3,9 @@
   color: #fff;
   height: 10vh;
 
+  @media (max-width: $mobileSize){
+    height: auto;
+  }
 }
 
 .navigation-container {

@@ -185,8 +185,8 @@ html {
 
 body {
   font-size: 3rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6))), url(../img/imgs/globe.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6)), url(../img/imgs/globe.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6))), url(../../img/imgs/globe.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6)), url(../../img/imgs/globe.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -409,6 +409,12 @@ body {
   height: 10vh;
 }
 
+@media (max-width: 700px) {
+  .navigation {
+    height: auto;
+  }
+}
+
 .navigation-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -437,7 +443,8 @@ body {
 
 @media (max-width: 700px) {
   .game {
-    padding: 12rem 0 0 0;
+    padding: 0;
+    margin-top: 0;
   }
 }
 

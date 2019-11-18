@@ -6,9 +6,9 @@
   justify-content: center;
 
   /* Landscape phones and down */
-  @media (max-width: 600px) {
+  @media (max-width: $mobileSize) {
     button {
-      font-size: 4rem;
+      font-size: 2rem;
     }
   }
 }

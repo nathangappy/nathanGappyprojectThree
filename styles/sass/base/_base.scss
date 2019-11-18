@@ -19,7 +19,7 @@ body {
 }
 
 /* Landscape phones and down */
-@media (max-width: 600px) {
+@media (max-width: $mobileSize) {
   .wrapper {
     width: 90%;
   }
@@ -50,5 +50,4 @@ button {
     background: $buttonHoverColor;
   }
 }
-
 

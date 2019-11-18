@@ -31,9 +31,9 @@ body {
   }
 
   /* Landscape phones and down */
-  @media (max-width: 600px) {
+  @media (max-width: $mobileSize) {
     h1 {
-      font-size: 4.5rem;
+      font-size: 4rem;
     }
   }
 }

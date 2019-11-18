@@ -3,8 +3,8 @@
   height: 90vh;
   padding: 8rem 0;
 
-  @media (max-width: 600px){
-    padding: 8rem 0 0 0;
+  @media (max-width: $mobileSize){
+    padding: 12rem 0 0 0;
   }
 }
 
@@ -19,8 +19,9 @@
   flex-direction: column;
   padding: 2rem;
 
-  @media (max-width: 600px){
-    padding: 8rem;
+  @media (max-width: $mobileSize){
+    padding: 0 0 0 0;
+    margin: 0rem;
   }
 
   .display-flag {
@@ -47,14 +48,14 @@
       font-size: 5rem;
 
       @media (max-width: 600px){
-        font-size: 4rem;
+        font-size: 2rem;
       }
     }
   }
 }
 
 .game-controls {
-  margin-top: 5rem 0; 
+  margin-top: 2rem 0; 
   text-align: center;
 
   form {
@@ -73,13 +74,18 @@
     text-transform: uppercase;
   }
 
-  @media (max-width: 600px){
+  @media (max-width: $mobileSize){
     form {
       width: 90%;
     }
 
     input {
-      margin: 2rem 0;
+      margin: 1rem 0;
+    }
+
+    button {
+      font-size: 2rem;
+      padding: 1rem;
     }
   }
 }

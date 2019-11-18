@@ -10,7 +10,7 @@
   justify-content: space-between;
 
   /* Landscape phones and down */
-  @media (max-width: 600px) {
+  @media (max-width: $mobileSize) {
     display: inline-block;
     text-align: center;
   }

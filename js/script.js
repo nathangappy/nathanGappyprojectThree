@@ -61,7 +61,7 @@ app.getRandomCountry = function(){
   let randomNumber = app.getRandomNumber();
   let randomCountry = countries[randomNumber]
   // check that country has not been used yet
-  if(this.countriesUsed.indexOf(randomCountry) >= 0 && this.countriesUsed.length > 0){
+  if(this.countriesUsed.indexOf(randomCountry.country) >= 0 && this.countriesUsed.length > 0){
     app.getRandomCountry();
   } else {
     // use random country that has passed a used already validation
